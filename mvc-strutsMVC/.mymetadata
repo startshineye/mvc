@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="mvc-strutsMVC"
+  id="myeclipse.1479643892572"
+  context-root="/mvc-ystruts"
+  j2ee-spec="5.0"
+  archive="mvc-strutsMVC.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
