@@ -57,7 +57,7 @@ public class ActionServlet extends HttpServlet {
 			systemName = ss.split("/")[1];
 			
 			//进行页面值转换
-			Map<String, Object> infoIn = getRequestToMap(req);
+			HashMap infoIn = getRequestToMap(req);
 			
 			//调用相应的业务逻辑
 			Class<?> clazz = Class.forName(getActionName(systemName,logicName));
@@ -80,10 +80,10 @@ public class ActionServlet extends HttpServlet {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unused")
-	private Map<String, Object> getRequestToMap(HttpServletRequest req)throws
+	private HashMap getRequestToMap(HttpServletRequest req)throws
 	Exception{
 		req.setCharacterEncoding("GBK");
-		Map<String, Object> infoIn = new HashMap<String, Object>();
+		HashMap infoIn = new HashMap();
 		for (Enumeration e = req.getParameterNames(); e.hasMoreElements();){
 			//获取页面中所有元素名
 			String strName = (String)e.nextElement();
