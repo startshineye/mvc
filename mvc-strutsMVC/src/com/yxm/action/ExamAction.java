@@ -12,8 +12,8 @@ public class ExamAction implements Action {
 		HashMap infoOut = new HashMap();
 		if (action.equals("")) infoOut = this.doInit (infoIn);
 		else if (action.equals("insert")) infoOut = this.doInsert (infoIn);
-		else if (action.equals("update")) infoOut = this.do Update(infoIn);
-		else if (action.equals("delete")) infoOut = this.do Delete(infoIn);
+		else if (action.equals("update")) infoOut = this.doUpdate(infoIn);
+		else if (action.equals("delete")) infoOut = this.doDelete(infoIn);
 		else if (action.equals("query")) infoOut = this. doQuery(infoIn);
 		return infoOut;
 	}
@@ -44,6 +44,17 @@ public class ExamAction implements Action {
 	}
 	}
 	
+	private HashMap doUpdate(HashMap infoIn){
+	 	 HashMap infoOut = infoIn;
+		try{
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			return infoOut;
+		}
+		
+	}
 	/**该方法用来进行删除
 	* @param infoIn
 	* @return HashMap
