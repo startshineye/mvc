@@ -29,14 +29,14 @@ public class ActionServlet extends HttpServlet {
 	 * 页面中使用get方式提交，执行post方法
 	 */
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException, IOException{
-		
+		System.out.println("执行doGet");
 		doPost(req, res);
 	}
 	/**
 	 * 页面使用post方式提交，，执行do_Dispatcher方法
 	 */
 	public void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException, IOException{
-		
+		do_Dispatcher(req, res);
 	}
 	/**
 	 * 用来处理视图层发送来的请求,并进行转发
@@ -54,19 +54,18 @@ public class ActionServlet extends HttpServlet {
 			//获取访问路径
 			String ss = req.getServletPath();
 			
-			systemName = ss.split("/")[1];
-			
+			systemName = ss.split("/")[1].replace(".do","");
 			//进行页面值转换
 			HashMap infoIn = getRequestToMap(req);
-			
-			//调用相应的业务逻辑
-			Class<?> clazz = Class.forName(getActionName(systemName,logicName));
+			String actionName = getActionName(systemName,logicName);
+			System.out.println(actionName);
+			//调用相应的业务逻辑com.yxm.action.HelloWorldAction
+			Class<?> clazz = Class.forName(actionName);
 			Action action = (Action)clazz.newInstance();
 			Map infoOut = action.doAction(infoIn);
 			//将处理后的结果返回页面
 			req.setAttribute("infoOut", infoOut);
-			RequestDispatcher rd = req.getRequestDispatcher("/"+
-			systemName +"/jsp/" + forwardJsp+ ".jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("/jsp/" + forwardJsp+ ".jsp");
 			rd.forward(req, res);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -3,7 +3,7 @@
     <wb-module deploy-name="mvc-strutsMVC">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="/mvc-ystruts"/>
         <property name="java-output-path" value="/mvc-strutsMVC/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/mvc"/>
     </wb-module>
 </project-modules>

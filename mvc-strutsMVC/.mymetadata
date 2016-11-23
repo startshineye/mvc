@@ -3,7 +3,7 @@
   type="WEB"
   name="mvc-strutsMVC"
   id="myeclipse.1479643892572"
-  context-root="/mvc-ystruts"
+  context-root="/mvc"
   j2ee-spec="5.0"
   archive="mvc-strutsMVC.war">
   <attributes>
